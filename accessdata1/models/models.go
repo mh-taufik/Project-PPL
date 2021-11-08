@@ -74,7 +74,7 @@ func AmbilProduct(id int64) (Products, error){
 		var product Products
 
 		//membuat sql query untuk memanggil satu data buku
-		sqlStatement := "SELECT * FROM products WHERE id=$1"
+		sqlStatement := "SELECT * FROM products WHERE id_produk=$1"
 
 		//eksekusi sql query
 		row := db.QueryRow(sqlStatement,id)
