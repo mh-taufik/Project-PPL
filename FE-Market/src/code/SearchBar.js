@@ -4,12 +4,18 @@ import { StyleSheet, Text, View, Image } from "react-native";
 const SearchBar = () => {
     return (
         <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
-            <View style={style.bar}>
-                <Text style={style.textGray}>Search</Text>
-                <Image source={require('../icon/search-bar.png')} style={{width: 23, height: 19, left: 200, top: 6}}/>
-            </View>
-            <View style={{flexDirection: 'row', top: 5}}>
-                <Image source={require('../icon/filter.png')} style={{width: 24, height: 26}}/>
+                <View style={{flexDirection:'row'}}>
+                    <TextInput
+                    placeholder='Search'
+                    style={style.bar}
+                    />
+                    <View>
+                        <Image source={require('../icon/search-bar.png')}
+                        style={{width: 23, height: 19, right:18, top: 6, position:'absolute'}}/>
+                    </View>
+                </View>
+            <View style={{flexDirection: 'row', top: 2,right:10}}>
+                <Image source={require('../icon/filter.png')} style={{width: 24, height: 30}}/>
                 <Text style={style.textBlue}>Filter</Text>
             </View>
         </View>
@@ -18,24 +24,29 @@ const SearchBar = () => {
 
 const style = StyleSheet.create({
     bar: {
-        width: 280,
+        color: '#868787',
+        fontSize: 12,
+        right:5,
+        width: 312,
         height: 33,
         borderColor: 'gray',
         borderRadius: 10,
-        borderWidth: 2,
-        flexDirection: 'row',
+        borderWidth: 1,
+        paddingRight:38,
+        paddingLeft:10
     },
     textBlue: {
         color: '#0C8EFF',
-        fontSize: 13,
+        left:2,
+        fontSize: 15,
         top: 5,
     },
-    textGray: {
-        color: '#868787',
-        fontSize: 12,
-        top: 6,
-        left: 10,
-    }
+    // textSearch: {
+    //     color: '#868787',
+    //     fontSize: 12,
+    //     top: 4,
+    //     left: 10,
+    // }
 })
 
 export default SearchBar;
