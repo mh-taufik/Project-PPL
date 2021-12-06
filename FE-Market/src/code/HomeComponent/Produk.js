@@ -10,7 +10,7 @@ const Produk = ({produkStok,produkImage,produkNama,produkHarga,produkRating}) =>
             <View style={style.cardProduk}>
                 <View style={style.stok_wishlist}>
                     <Text style={style.textBase}>Stok {produkStok}</Text>
-                    <Image source={require('../icon/unwish.png')} style={{width: 25, height: 25, left: 80}}/>
+                    <Image source={require('../../icon/unwish.png')} style={{width: 25, height: 25, left: 80}}/>
                 </View>
                 <View>
                     <Image source={{uri:produkImage}} style={style.gambar}/>
@@ -20,7 +20,7 @@ const Produk = ({produkStok,produkImage,produkNama,produkHarga,produkRating}) =>
                 </View>
                 <View style={style.harga}>
                     <Text style={style.textBlue}>{produkHarga}</Text>
-                    <Image source={require('../icon/rating.png')} style={{width: 19, height: 19, left: 60}}/>
+                    <Image source={require('../../icon/rating.png')} style={{width: 19, height: 19, left: 60}}/>
                     <Text style={style.textRating}>{produkRating}</Text>
                 </View>
             </View>

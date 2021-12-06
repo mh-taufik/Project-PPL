@@ -5,24 +5,24 @@ const Header = () => {
     return (
         <View style={{height: 90}}>
             <View style={style.header}>
-                <Image source={require('../icon/mail.png')} style={style.mail}/>
+                <Image source={require('../../icon/mail.png')} style={style.mail}/>
                 <Text style={style.tittle}>Search</Text>
             </View>
             <View style={style.option}>
                 <View  style={style.squareGray}>
-                    <Image source={require('../icon/friend.png')} style={style.icon}/>
+                    <Image source={require('../../icon/friend.png')} style={style.icon}/>
                     <Text style={style.textGray}>Friend</Text>
                 </View>
                 <View  style={style.squareGray}>
-                    <Image source={require('../icon/forum.png')} style={style.icon}/>
+                    <Image source={require('../../icon/forum.png')} style={style.icon}/>
                     <Text style={style.textGray}>Forum</Text>
                 </View>
                 <View  style={style.squareGray}>
-                    <Image source={require('../icon/event.png')} style={style.icon}/>
+                    <Image source={require('../../icon/event.png')} style={style.icon}/>
                     <Text style={style.textGray}>Event</Text>
                 </View>
                 <View  style={style.squareBlue}>
-                    <Image source={require('../icon/market.png')} style={style.icon}/>
+                    <Image source={require('../../icon/market.png')} style={style.icon}/>
                     <Text style={style.textBlue}>Market</Text>
                 </View>
             </View>

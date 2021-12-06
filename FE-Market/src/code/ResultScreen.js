@@ -1,10 +1,10 @@
 import React from 'react'
 import {View, Text, StyleSheet, ScrollView} from 'react-native'
-import Header from './Header'
-import MenuBar from './MenuBar'
-import SearchBar from './SearchBar'
-import Produk from './Produk'
-import ShowingList from './Showinglist'
+import Header from './ResultComponent/Header'
+import MenuBar from './ResultComponent/MenuBar'
+import SearchBar from './ResultComponent/SearchBar'
+import Produk from './ResultComponent/Produk'
+import ShowingList from './ResultComponent/Showinglist'
 
 
 const ResultScreen = () => {

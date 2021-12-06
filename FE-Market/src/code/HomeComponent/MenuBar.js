@@ -6,22 +6,22 @@ const MenuBar = () => {
         <View style={style.menu}>
             {/* <Image source={require('../icon/container.png')} style={style.container}/> */}
             <View>
-                <Image source={require('../icon/feeds.png')} style={style.feed}/>
+                <Image source={require('../../icon/feeds.png')} style={style.feed}/>
                 <Text style={style.textFeed}>Feed</Text>
             </View>
             <View>
-                <Image source={require('../icon/search.png')} style={style.search}/>
+                <Image source={require('../../icon/search.png')} style={style.search}/>
                 <Text style={style.textSearch}>Search</Text>
             </View>
             <View>
-                <Image source={require('../icon/logo.png')} style={style.logo}/>
+                <Image source={require('../../icon/logo.png')} style={style.logo}/>
             </View>
             <View>
-                <Image source={require('../icon/safety.png')} style={style.safety}/>
+                <Image source={require('../../icon/safety.png')} style={style.safety}/>
                 <Text style={style.textSafety}>Safety</Text>
             </View>
             <View>
-                <Image source={require('../icon/profile.png')} style={style.profile}/>
+                <Image source={require('../../icon/profile.png')} style={style.profile}/>
                 <Text style={style.textProfile}>Profile</Text>
             </View>
         </View>
