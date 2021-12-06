@@ -31,7 +31,7 @@ const Produk = ({produkStok,produkImage,produkNama,produkHarga,produkRating}) =>
 const style = StyleSheet.create ({
     container: {
         alignItems: 'center',
-        backgroundColor: 'black',
+        backgroundColor: 'white',
     },
     cardProduk: {
         height: 220,
