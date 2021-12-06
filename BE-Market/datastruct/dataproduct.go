@@ -8,35 +8,34 @@ import (
 	_ "github.com/lib/pq"
 )
 
-
 type Products struct {
-	Id_produk     int  
-	Nama_produk   string 
-	Deskripsi_produk string 
-    Stok             int 
-    Harga_produk     float32 
-    Rating_produk    float32 
-    Jumlah_terjual   int 
-    Jumlah_dilihat   int 
+	Id_produk        int
+	Nama_produk      string
+	Deskripsi_produk string
+	Stok             int
+	Harga_produk     float32
+	Rating_produk    float32
+	Jumlah_terjual   int
+	Jumlah_dilihat   int
 }
 
 func ShowAllProduct() ([]Products, error) {
 	var products []Products
-	db,err := sql.Open("postgres","postgres://postgres:lamindah21@localhost/Market?sslmode=disable")
-	if err !=nil{
+	db, err := sql.Open("postgres", "postgres://db_ppl:andromeda@103.157.96.115/db_standar?sslmode=disable")
+	if err != nil {
 		panic(err)
 	}
 
 	//cek koneksi
 	err = db.Ping()
-	
-	if err != nil{
+
+	if err != nil {
 		panic(err)
 	}
 
 	fmt.Println("Berhasil terhubung ke database")
-	
-    //Select Query
+
+	//Select Query
 	sqlStatement := `SELECT * FROM products`
 
 	//eksesuki query

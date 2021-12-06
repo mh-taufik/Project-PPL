@@ -4,7 +4,7 @@ import Header from './code/Header'
 import MenuBar from './code/MenuBar'
 import SearchBar from './code/SearchBar'
 import Produk from './code/Produk'
-import ShowingList from './code/Showinglist'
+import ShowingList from './code/ShowinglistClass'
 
 
 const App = () => {

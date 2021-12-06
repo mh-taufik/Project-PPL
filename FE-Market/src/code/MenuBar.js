@@ -34,8 +34,8 @@ const style = StyleSheet.create({
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
         flexDirection: 'row',
-        width: 360,
-        height: 100,
+        width: '100%',
+        height: '10%',
         top: 0,
     },
     feed: {
