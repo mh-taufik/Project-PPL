@@ -3,8 +3,8 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native'
 import Header from './code/Header'
 import MenuBar from './code/MenuBar'
 import SearchBar from './code/SearchBar'
-import Produk from './code/Produk'
 import ShowingList from './code/Showinglist'
+import Navbar from './code/navbar'
 
 
 const App = () => {
@@ -12,11 +12,12 @@ const App = () => {
     <View style={style.page}>
       <Header/>
       <SearchBar/>
-      <View style={{top: 10}}>
-        <ShowingList/>
-      </View>
-      <View style={style.page}>
+      <ShowingList/>
+      {/* <View style={style.page}>
         <MenuBar/>
+      </View> */}
+      <View>
+        <Navbar/>
       </View>
     </View>
   )
