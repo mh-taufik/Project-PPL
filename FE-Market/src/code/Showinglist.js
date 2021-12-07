@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useEffect ,useState } from "react";
 import { FlatList, View, Image, StyleSheet, Text } from "react-native";
-import { makeStyles } from 'react-native-elements';
 
 const ShowingList = () => {
     const [dataProduk, setDataProduk] = useState([]);
@@ -9,12 +8,12 @@ const ShowingList = () => {
     
     useEffect(() => {
         getData();
-    });
+    },[]);
 
     const getData = () => {
         axios.get('https://6151286fd0a7c10017016906.mockapi.io/Products').then(res => 
         {
-            // setJumlahDB(Object.keys(res.data).length);
+            // console.log('result: ',res)
             setDataProduk(res.data);
         })
     }
@@ -25,10 +24,10 @@ const ShowingList = () => {
             numColumns={2}
             keyExtractor={( item ) => item.produk_id}
             data={dataProduk}
-            renderItem={( item ) => (
-                <View style={styles.container}>
-                    <View style={styles.stok_wishlist}>
-                        <Text style={styles.textBase}>Stok {item.stok}</Text>
+            renderItem={({ item }) => (
+                <View style={styles.cardProduk}>
+                    <View style={styles.stok}>
+                        <Text style={styles.textStok}>Stok {item.stok}</Text>
                     </View>
                     <View>
                         <Image source={{uri:item.foto_produk}} style={styles.gambar}/>
@@ -36,12 +35,12 @@ const ShowingList = () => {
                     <View>
                         <Text style={styles.nama}>{item.nama_produk}</Text>
                     </View>
-                    <View style={styles.harga}>
-                        <Text style={styles.textBlue}>{item.harga_produk}</Text>
-                        <Image source={require('../icon/rating.png')} style={{width: 19, height: 19, left: 60}}/>
+                    <View style={styles.keterangan}>
+                        <Text style={styles.textHarga}>Rp.{item.harga_produk}</Text>
+                        <Image source={require('../icon/rating.png')} style={styles.ratingLogo}/>
                         <Text style={styles.textRating}>{item.rating_produk}</Text>
                     </View>
-                    {/* <Text style={styles.nama}>{item.nama_produk}</Text> */}
+                    
                 </View>
             )}
             />
@@ -50,58 +49,59 @@ const ShowingList = () => {
 }
 
 const styles = StyleSheet.create({
-    // container:{
-    //     backgroundColor: 'black',
-    //     height: '70%',
-    //     width: '100%',
-    //     top: '-5%'
-    // },
-    // nama: {
-    //     fontSize: 20,
-    //     fontStyle: 'normal',
-    //     color: 'red',
-    // }
     container: {
-        alignItems: 'row',
-        backgroundColor: 'black',
-        height: '70%',
+        top: '-3%',
+        backgroundColor: 'white',
+        height: '43%',
         width: '100%',
-        top: '-5%'
     },
     cardProduk: {
-        height: 220,
-        width: 180,
-        backgroundColor: 'black',
+        height: '90%',
+        width: '48%',
+        backgroundColor: 'white',
         marginHorizontal: 2,
         borderRadius: 10,
         marginBottom: 20,
         padding: 15,
         flexDirection: 'column'
     },
-    stok_wishlist: {
-        flexDirection: 'row'
+    stok: {
+        top: -10
     },
-    harga: {
-        top: 20,
-        flexDirection: 'row'
+    keterangan: {
+        position: 'absolute',
+        left: '10%',
+        top: '108%',
+        width: '100%',
+    },
+    ratingLogo: {
+        position: 'absolute',
+        left: '67%',
+        width: 18,
+        height: 18
     },
     gambar: {
-        width: 150,
-        height: 100,
+        left: '10%',
+        width: 80,
+        height: 80,
     },
     nama: {
+        fontSize: 8,
+        color: 'black'
+    },
+    textStok: {
+        color: 'black',
+        fontSize: 10,
+    },
+    textHarga: {
+        position: 'absolute',
+        color: 'steelblue',
         fontSize: 12,
-        color: 'black'
-    },
-    textBase: {
-        color: 'black'
-    },
-    textBlue: {
-        color: 'steelblue'
     },
     textRating: {
-        color: 'black',
-        left: 63,
+        color: 'gray',
+        fontSize: 12,
+        left: '80%',
     }
 })
 

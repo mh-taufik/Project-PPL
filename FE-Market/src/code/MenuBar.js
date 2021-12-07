@@ -1,11 +1,14 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+
+const size = Dimensions.get('window').height/5-25;
+// const imageHeight =
+// const imageWidth = Dimensions.get('screen').width;
 
 const MenuBar = () => {
     return (
         <View style={style.menu}>
-            {/* <Image source={require('../icon/container.png')} style={style.container}/> */}
-            <View>
+            {/* <View>
                 <Image source={require('../icon/feeds.png')} style={style.feed}/>
                 <Text style={style.textFeed}>Feed</Text>
             </View>
@@ -24,31 +27,49 @@ const MenuBar = () => {
                 <Image source={require('../icon/profile.png')} style={style.profile}/>
                 <Text style={style.textProfile}>Profile</Text>
             </View>
+        </View> */}
+            <View style={style.logoContainer}>
+                <Image source={require('../icon/feeds.png')} style={style.feed}/>
+                <Image source={require('../icon/search.png')} style={style.search}/>
+                <Image source={require('../icon/logo.png')} style={style.logo}/>
+                <Image source={require('../icon/safety.png')} style={style.safety}/>
+                <Image source={require('../icon/profile.png')} style={style.profile}/>
+            </View>
+            <View style={style.textContainer}>
+                <Text style={style.textFeed}>Feed</Text>
+                <Text style={style.textSearch}>Search</Text>
+                <Text style={style.textSafety}>Safety</Text>
+                <Text style={style.textProfile}>Profile</Text>
+            </View>
         </View>
     )
 }
 
 const style = StyleSheet.create({
     menu: {
-        backgroundColor: 'white',
+        backgroundColor: 'blue',
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
         flexDirection: 'row',
         width: '100%',
         height: '10%',
-        top: '-14%',
+        top: '-13%',
+    },
+    logoContainer: {
+        alignContent: "space-between",
+        left: '-10%'
     },
     feed: {
         position: "absolute",
-        width: 35,
-        height: 36,
+        width: size,
+        height: size,
         left: 25,
         top: 6
     }, 
     search: {
         position: "absolute",
-        width: 35,
-        height: 36.81,
+        width: size,
+        height: 36,
         left: 94.73,
         top: 6
     },

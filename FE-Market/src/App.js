@@ -4,6 +4,7 @@ import Header from './code/Header'
 import MenuBar from './code/MenuBar'
 import SearchBar from './code/SearchBar'
 import ShowingList from './code/Showinglist'
+import Navbar from './code/navbar'
 
 
 const App = () => {
@@ -12,9 +13,11 @@ const App = () => {
       <Header/>
       <SearchBar/>
       <ShowingList/>
-        <Text >ADADADAD</Text>
-      <View style={style.page}>
+      {/* <View style={style.page}>
         <MenuBar/>
+      </View> */}
+      <View>
+        <Navbar/>
       </View>
     </View>
   )

@@ -3,10 +3,11 @@ import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 
 const SearchBar = () => {
     return (
-        <View style={{flexDirection: 'row', justifyContent: 'space-evenly', top: '-4%'}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-evenly', top: '-5%'}}>
                 <View style={{flexDirection:'row'}}>
                     <TextInput
                     placeholder="Search"
+                    placeholderTextColor="gray"
                     style={style.bar}
                     />
                     <Image source={require('../icon/search-bar.png')} style={style.iconSearch}/>
@@ -22,7 +23,7 @@ const SearchBar = () => {
 const style = StyleSheet.create({
     bar: {
         color: '#868787',
-        fontSize: 17,
+        fontSize: 13,
         left: '20%',
         width: '88%',
         height: '70%',
