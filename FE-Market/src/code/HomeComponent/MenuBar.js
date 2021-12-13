@@ -42,7 +42,7 @@ const MenuBar = () => {
                 <Text style={style.textSearch}>Search</Text>
                 <Text style={style.textSafety}>Safety</Text>
                 <Text style={style.textProfile}>Profile</Text>
-            </View>*/
+            </View> */
     )
 }
 
