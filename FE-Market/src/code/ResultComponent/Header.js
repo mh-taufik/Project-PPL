@@ -6,7 +6,7 @@ const Header = () => {
         <View style={{height: 90}}>
             <View style={style.header}>
                 <Image source={require('../../icon/mail.png')} style={style.mail}/>
-                <Text style={style.tittle}>Search</Text>
+                <Text style={style.tittle}>Result</Text>
             </View>
             <View style={style.option}>
                 <View  style={style.squareGray}>
