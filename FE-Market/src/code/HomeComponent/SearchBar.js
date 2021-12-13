@@ -1,17 +1,18 @@
 import React from "react";
 import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import ButtonSearch from "./ButtonSearch";
 
 const SearchBar = () => {
     return (
         <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
                 <View style={{flexDirection:'row'}}>
                     <TextInput
-                    placeholder='Search'
-                    style={style.bar}
+                        placeholder='Search'
+                        style={style.bar}
                     />
                     <View>
-                        <Image source={require('../../icon/search-bar.png')}
-                        style={{width: 23, height: 19, right:18, top: 6, position:'absolute'}}/>
+                        <ButtonSearch/>
+                        {/* <Image source={require('../../icon/search-bar.png')} */}
                     </View>
                 </View>
             <View style={{flexDirection: 'row', top: 2,right:10}}>
