@@ -1,11 +1,9 @@
 import React from 'react'
-import {View, Text, StyleSheet, ScrollView} from 'react-native'
+import {View, StyleSheet} from 'react-native'
 import Header from './HomeComponent/Header'
 import MenuBar from './HomeComponent/MenuBar'
 import SearchBar from './HomeComponent/SearchBar'
-import Produk from './HomeComponent/Produk'
 import ShowingList from './HomeComponent/Showinglist'
-
 
 const HomeScreen = () => {
   return (
@@ -21,7 +19,6 @@ const HomeScreen = () => {
     </View>
   )
 }
-
 
 const style = StyleSheet.create({
   page: {

@@ -3,7 +3,6 @@ import {View, Text, StyleSheet, ScrollView} from 'react-native'
 import Header from './ResultComponent/Header'
 import MenuBar from './ResultComponent/MenuBar'
 import SearchBar from './ResultComponent/SearchBar'
-import Produk from './ResultComponent/Produk'
 import ShowingList from './ResultComponent/Showinglist'
 
 

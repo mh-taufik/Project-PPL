@@ -1,9 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
-
-const size = Dimensions.get('window').height/5-25;
-// const imageHeight =
-// const imageWidth = Dimensions.get('screen').width;
+import { View, Text, StyleSheet, Image } from "react-native";
 
 const MenuBar = () => {
     return (
@@ -29,48 +25,30 @@ const MenuBar = () => {
                 <Text style={style.textProfile}>Profile</Text>
             </View>
         </View>
-        /* </View> 
-            <View style={style.logoContainer}>
-                <Image source={require('../icon/feeds.png')} style={style.feed}/>
-                <Image source={require('../icon/search.png')} style={style.search}/>
-                <Image source={require('../icon/logo.png')} style={style.logo}/>
-                <Image source={require('../icon/safety.png')} style={style.safety}/>
-                <Image source={require('../icon/profile.png')} style={style.profile}/>
-            </View>
-            <View style={style.textContainer}>
-                <Text style={style.textFeed}>Feed</Text>
-                <Text style={style.textSearch}>Search</Text>
-                <Text style={style.textSafety}>Safety</Text>
-                <Text style={style.textProfile}>Profile</Text>
-            </View> */
     )
 }
 
 const style = StyleSheet.create({
     menu: {
-        backgroundColor: 'blue',
+        backgroundColor: 'white',
         borderTopRightRadius: 20,
         borderTopLeftRadius: 20,
         flexDirection: 'row',
-        width: '100%',
-        height: '10%',
-        top: '-13%',
-    },
-    logoContainer: {
-        alignContent: "space-between",
-        left: '-10%'
+        width: 360,
+        height: 100,
+        top: 0,
     },
     feed: {
         position: "absolute",
-        width: size,
-        height: size,
+        width: 35,
+        height: 36,
         left: 25,
         top: 6
     }, 
     search: {
         position: "absolute",
-        width: size,
-        height: 36,
+        width: 35,
+        height: 36.81,
         left: 94.73,
         top: 6
     },

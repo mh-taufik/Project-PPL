@@ -12,7 +12,6 @@ const SearchBar = () => {
                     />
                     <View>
                         <ButtonSearch/>
-                        {/* <Image source={require('../../icon/search-bar.png')} */}
                     </View>
                 </View>
             <View style={{flexDirection: 'row', top: 2,right:10}}>
