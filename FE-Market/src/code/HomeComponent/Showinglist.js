@@ -4,7 +4,6 @@ import { FlatList, View, Image, StyleSheet, Text } from "react-native";
 
 const ShowingList = () => {
     const [dataProduk, setDataProduk] = useState([]);
-    // const [jumlahProduk, setJumlahProduk] = useState(0);
     
     useEffect(() => {
         getData();
@@ -37,7 +36,7 @@ const ShowingList = () => {
                     </View>
                     <View style={styles.keterangan}>
                         <Text style={styles.textHarga}>Rp.{item.harga_produk}</Text>
-                        <Image source={require('../icon/rating.png')} style={styles.ratingLogo}/>
+                        <Image source={require('../../icon/rating.png')} style={styles.ratingLogo}/>
                         <Text style={styles.textRating}>{item.rating_produk}</Text>
                     </View>
                     
