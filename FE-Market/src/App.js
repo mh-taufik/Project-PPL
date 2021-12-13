@@ -1,34 +1,20 @@
-import React from 'react'
-import {View, Text, StyleSheet, ScrollView} from 'react-native'
-import Header from './code/Header'
-import MenuBar from './code/MenuBar'
-import SearchBar from './code/SearchBar'
-import ShowingList from './code/Showinglist'
-import Navbar from './code/navbar'
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './code/HomeScreen';
+import ResultScreen from './code/ResultScreen';
 
+const Stack = createNativeStackNavigator();
 
-const App = () => {
+function App() {
   return (
-    <View style={style.page}>
-      <Header/>
-      <SearchBar/>
-      <ShowingList/>
-      {/* <View style={style.page}>
-        <MenuBar/>
-      </View> */}
-      <View>
-        <Navbar/>
-      </View>
-    </View>
-  )
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} options={{headerShown:false}}/>
+        <Stack.Screen name="Result" component={ResultScreen} options={{headerShown:false}}/>
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
-
-
-const style = StyleSheet.create({
-  page: {
-    backgroundColor: 'white',
-    height: 700,
-  }
-})
 
 export default App;
