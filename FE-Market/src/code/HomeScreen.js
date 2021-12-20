@@ -1,9 +1,9 @@
 import React from 'react'
 import {View, StyleSheet} from 'react-native'
 import Header from './HomeComponent/Header'
-import MenuBar from './HomeComponent/MenuBar'
 import SearchBar from './HomeComponent/SearchBar'
 import ShowingList from './HomeComponent/Showinglist'
+import Navbar from './navbar'
 
 const HomeScreen = () => {
   return (
@@ -14,7 +14,7 @@ const HomeScreen = () => {
         <ShowingList/>
       </View>
       <View style={style.page}>
-        <MenuBar/>
+        <Navbar/>
       </View>
     </View>
   )

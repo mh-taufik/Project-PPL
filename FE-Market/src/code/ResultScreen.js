@@ -1,9 +1,9 @@
 import React from 'react'
 import {View, Text, StyleSheet, ScrollView} from 'react-native'
 import Header from './ResultComponent/Header'
-import MenuBar from './ResultComponent/MenuBar'
 import SearchBar from './ResultComponent/SearchBar'
 import ShowingList from './ResultComponent/Showinglist'
+import Navbar from './navbar'
 
 
 const ResultScreen = () => {
@@ -15,7 +15,7 @@ const ResultScreen = () => {
         <ShowingList/>
       </View>
       <View style={style.page}>
-        <MenuBar/>
+        <Navbar/>
       </View>
     </View>
   )
