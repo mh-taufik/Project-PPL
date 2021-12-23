@@ -11,13 +11,15 @@ import (
 
 func main() {
 	logger := log.NewLogfmtLogger(os.Stdout)     
-	transport.Router();   
+	r := transport.Router();   
+  
 	port := os.Getenv("PORT")     
 	if port == "" {         
 		port = "8080"     
 		}     
 	logger.Log("listening-on", port)    
-	if err := http.ListenAndServe(":"+port, nil); err != nil {          
+  
+	if err := http.ListenAndServe(":"+port, r); err != nil {          
 		logger.Log("listen.error", err)     
 	}
 }
