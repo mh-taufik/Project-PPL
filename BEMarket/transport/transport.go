@@ -1,7 +1,7 @@
 package transport
 
 import (
-	"BEMarket/service"
+	"BE-Market/service"
 
 	"github.com/gorilla/mux"
 )
