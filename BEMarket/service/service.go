@@ -1,7 +1,7 @@
 package service
 
 import (
-	"BEMarket/datastruct"
+	"BE-Market/datastruct"
 	"database/sql"
 	"encoding/json"
 	"fmt"
