@@ -33,17 +33,36 @@ func ShowAllProduct() ([]Produk, error) {
     //Select Query`
 	sqlStatement := `SELECT * FROM produk`
 	
-	//eksesuki query
-	rows, err := db.Query(sqlStatement)
+type Products struct {
+	Id_produk        int
+	Nama_produk      string
+	Deskripsi_produk string
+	Stok             int
+	Harga_produk     float32
+	Rating_produk    float32
+	Jumlah_terjual   int
+	Jumlah_dilihat   int
+}
 
+func ShowAllProduct() ([]Products, error) {
+	var products []Products
+	db, err := sql.Open("postgres", "postgres://db_ppl:andromeda@103.157.96.115/db_standar?sslmode=disable")
 	if err != nil {
-		log.Fatalf("Gagal mengeksekusi query %v", err)
+		panic(err)
 	}
 
-	//menutup eksekusi dari query
-	defer rows.Close()
+	//cek koneksi
+	err = db.Ping()
 
-	// iterasi mengambil data
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Berhasil terhubung ke database")
+
+	//Select Query
+	sqlStatement := `SELECT * FROM products`
+
 	for rows.Next() {
 		var Produks Produk
 
@@ -51,13 +70,7 @@ func ShowAllProduct() ([]Produk, error) {
 		err = rows.Scan(&Produks.IdProduk, &Produks.NamaProduk, &Produks.DeskripsiProduk, &Produks.FotoProduk, &Produks.Stok,
 			&Produks.HargaProduk, &Produks.RatingProduk, &Produks.JumlahTerjual, &Produks.JumlahDilihat)
 
-		if err != nil {
-			log.Fatalf("Gagal mengeksekusi data %v", err)
-		}
-
-		// memasukkan ke slice bukus
 		products = append(products, Produks)
 	}
 	return products, err
 }
-

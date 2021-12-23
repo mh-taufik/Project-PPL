@@ -40,6 +40,7 @@ type Response struct {
 	Status  int           `json:"status"`
 	Message string        `json:"message"`
 	Data    []datastruct.Produk `json:"data"`
+
 }
 
 
@@ -59,6 +60,7 @@ func DataProduct(w http.ResponseWriter, r *http.Request) {
 	response.Status = 1
 	response.Message = "Success"
 	response.Data = products	
+
 
 	// kirim semua response
 	json.NewEncoder(w).Encode(response)
