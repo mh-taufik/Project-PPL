@@ -15,10 +15,6 @@ const SearchBar = () => {
                         style={{width: 23, height: 19, right:18, top: 6, position:'absolute'}}/>
                     </View>
                 </View>
-            <View style={{flexDirection: 'row', top: 2,right:10}}>
-                <Image source={require('../../icon/filter.png')} style={{width: 24, height: 30}}/>
-                <Text style={style.textBlue}>Filter</Text>
-            </View>
         </View>
     )
 } 
@@ -28,9 +24,9 @@ const style = StyleSheet.create({
         color: '#868787',
         fontSize: 13,
         left: '20%',
-        width: '88%',
+        width: '96%',
         height: '70%',
-        borderColor: 'gray',
+        borderColor: '#868787',
         borderRadius: 10,
         borderWidth: 2,
     },
