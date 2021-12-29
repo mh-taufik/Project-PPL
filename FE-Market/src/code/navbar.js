@@ -36,6 +36,7 @@ export default Navbar;
 
 const styles = StyleSheet.create({
   wrapper: {
+    top: -95,
     height: 75,
     bottom: 0,
     left: 0,
@@ -51,6 +52,7 @@ const styles = StyleSheet.create({
     top: 18,
   },
   teks: {
+    color: '#d1d1d1',
     alignSelf: 'center',
     top: 18,
   },

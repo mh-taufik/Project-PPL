@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useEffect ,useState } from "react";
 import { FlatList, View, Image, StyleSheet, Text } from "react-native";
 
-const ShowingList = () => {
+const ShowingList = ( params ) => {
     const [dataProduk, setDataProduk] = useState([]);
 
     useEffect(() => {

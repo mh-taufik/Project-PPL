@@ -49,9 +49,9 @@ const ShowingList = () => {
 
 const styles = StyleSheet.create({
     container: {
-        top: '-3%',
+        top: '1%',
         backgroundColor: 'white',
-        height: '43%',
+        height: '85%',
         width: '100%',
     },
     cardProduk: {

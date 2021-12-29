@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "reac
 import { useNavigation } from '@react-navigation/native';
 
 const SearchBar = () => {
+    const [keyword, setKeyword] = useState('');
     const navigation = useNavigation();
 
     return (
@@ -11,11 +12,12 @@ const SearchBar = () => {
                     <TextInput
                         placeholder='Search'
                         style={style.bar}
+                        onChangeText={(val) => setKeyword(val)}
+                        value={keyword}
                     />
                     <View>
-
                         <View>
-                            <TouchableOpacity onPress={()=> navigation.navigate("Result")}>
+                            <TouchableOpacity onPress={()=> {navigation.navigate("Result", {keyword: 89})}}>
                                 <Image 
                                 style={style.button}
                                 source={require("../../icon/search-bar.png")}
