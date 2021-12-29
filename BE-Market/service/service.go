@@ -11,13 +11,15 @@ import (
 	"github.com/gorilla/mux"
 	_ "github.com/lib/pq"
 )
+
 var db *sql.DB
+
 const (
 	//sesuaikan dengan database lokal dulu, karena pada database online masih ada kendala pengaksesan lewat MicroService
 	host     = "localhost"
 	port     = 5432
 	user     = "postgres"
-	password = "lamindah21"
+	password = "postgres"
 	dbname   = "Market"
 )
 
@@ -35,36 +37,46 @@ func init() {
 	fmt.Println("Now we are connected to POSTGRESQL DATABASE.")
 }
 
+func AllDataProduct(w http.ResponseWriter, r *http.Request) {
+	if r.Method != "GET" {
+		http.Error(w, http.StatusText(404), http.StatusMethodNotAllowed)
+		return
+	}
 
-type Response struct {
-	Status  int           `json:"status"`
-	Message string        `json:"message"`
-	Data    []datastruct.Produk `json:"data"`
+	rows, err := db.Query("SELECT * FROM produk ORDER BY jumlah_dilihat DESC LIMIT 10")
+	if err != nil {
+		http.Error(w, http.StatusText(500), http.StatusInternalServerError)
+		return
+	}
 
-}
+	defer rows.Close()
 
+	var dataProduk []datastruct.Produk
 
-func DataProduct(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Context-Type", "application/x-www-form-urlencoded")
-	w.Header().Set("Access-Control-Allow-Origin", "*")
-	
-	products, err := datastruct.ShowAllProduct();
+	for rows.Next() {
+		var Produks datastruct.Produk
 
+		err = rows.Scan(&Produks.IdProduk, &Produks.NamaProduk, &Produks.DeskripsiProduk, &Produks.FotoProduk, &Produks.Stok,
+			&Produks.HargaProduk, &Produks.RatingProduk, &Produks.JumlahTerjual, &Produks.JumlahDilihat)
+
+		if err != nil {
+			log.Fatalf("Gagal mengeksekusi data %v", err)
+		}
+		dataProduk = append(dataProduk, Produks)
+	}
 
 	if err != nil {
 		log.Fatalf("Tidak bisa mengambil data. %v", err)
 	}
-	
 
-	var response Response
+	var response datastruct.Response
 	response.Status = 1
 	response.Message = "Success"
-	response.Data = products	
-
+	response.Data = dataProduk
 
 	// kirim semua response
 	json.NewEncoder(w).Encode(response)
-}	
+}
 
 func Search(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
@@ -106,11 +118,11 @@ func Search(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var response Response
+	var response datastruct.Response
 	response.Status = 1
 	response.Message = "Success"
-	response.Data = dataProduk	
-	
+	response.Data = dataProduk
+
 	json.NewEncoder(w).Encode(response)
 }
 
@@ -154,10 +166,10 @@ func Recommend(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	var response Response
+	var response datastruct.Response
 	response.Status = 1
 	response.Message = "Success"
-	response.Data = dataProduk	
-	
+	response.Data = dataProduk
+
 	json.NewEncoder(w).Encode(response)
 }
