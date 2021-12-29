@@ -1,8 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
-import ButtonSearch from "./ButtonSearch";
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 
 const SearchBar = () => {
+    const navigation = useNavigation();
+
     return (
         <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
                 <View style={{flexDirection:'row'}}>
@@ -11,7 +13,15 @@ const SearchBar = () => {
                         style={style.bar}
                     />
                     <View>
-                        <ButtonSearch/>
+
+                        <View>
+                            <TouchableOpacity onPress={()=> navigation.navigate("Result")}>
+                                <Image 
+                                style={style.button}
+                                source={require("../../icon/search-bar.png")}
+                                />
+                            </TouchableOpacity>
+                        </View>
                     </View>
                 </View>
             <View style={{flexDirection: 'row', top: 2,right:10}}>
@@ -40,6 +50,13 @@ const style = StyleSheet.create({
         left:2,
         fontSize: 15,
         top: 5,
+    },
+    button : {
+        width: 23,
+        height: 19,
+        right:18,
+        top: 6,
+        position:'absolute'
     },
     // textSearch: {
     //     color: '#868787',
