@@ -9,8 +9,7 @@ import Navbar from './navbar'
 const ResultScreen = () => {
   return (
     <View style={style.page}>
-      <Header/>
-      <SearchBar/>
+      {/* <SearchBar/> */}
       <View style={{top: 10}}>
         <ShowingList/>
       </View>

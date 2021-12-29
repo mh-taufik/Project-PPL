@@ -1,14 +1,22 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View, ViewComponent } from 'react-native';
+import { Image, StyleSheet, View, TouchableOpacity} from 'react-native';
 
 const Header = () => {
     return (
-        <View style={{height: 90,top:'4%'}}>
-            <View style={style.header}>
-                <Image source={require('../../icon/mail.png')} style={style.mail}/>
-                {/* <Text style={style.tittle}>Result</Text> */}
-            </View>
+        <View>
+            <TouchableOpacity onPress={()=> alert('mail')}>
+                <Image 
+                  style={style.button}
+                  source={require("../../icon/mail.png")}
+                />
+            </TouchableOpacity>
         </View>
+        // <View style={{height: 90,top:'4%'}}>
+        //     <View style={style.header}>
+        //         <Image source={require('../../icon/mail.png')} style={style.mail}/>
+        //         {/* <Text style={style.tittle}>Result</Text> */}
+        //     </View>
+        // </View>
     )
 }
 
