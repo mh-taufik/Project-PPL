@@ -43,7 +43,7 @@ func AllDataProduct(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	rows, err := db.Query("SELECT * FROM produk")
+	rows, err := db.Query("SELECT * FROM produk ORDER BY jumlah_dilihat DESC LIMIT 10")
 	if err != nil {
 		http.Error(w, http.StatusText(500), http.StatusInternalServerError)
 		return
