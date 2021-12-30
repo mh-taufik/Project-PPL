@@ -10,7 +10,8 @@ const ShowingList = () => {
     },[]);
 
     const getData = () => {
-        axios.get('https://6151286fd0a7c10017016906.mockapi.io/Products').then(res => 
+        // axios.get('https://6151286fd0a7c10017016906.mockapi.io/Products').then(res => 
+        axios.get(`localhost:8080/search/produk`).then(res => 
         {
             // console.log('result: ',res)
             setDataProduk(res.data);

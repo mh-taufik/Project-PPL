@@ -1,9 +1,9 @@
-import React from "react";
+import * as React from "react";
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 const SearchBar = () => {
-    const [keyword, setKeyword] = useState('');
+    const [search, setSearch] = React.useState('');
     const navigation = useNavigation();
 
     return (
@@ -12,12 +12,12 @@ const SearchBar = () => {
                     <TextInput
                         placeholder='Search'
                         style={style.bar}
-                        onChangeText={(val) => setKeyword(val)}
-                        value={keyword}
+                        onChangeText={setSearch}
+                        value={search}
                     />
                     <View>
                         <View>
-                            <TouchableOpacity onPress={()=> {navigation.navigate("Result", {keyword: 89})}}>
+                            <TouchableOpacity onPress={()=> {navigation.navigate("Result", {key: search})}}>
                                 <Image 
                                 style={style.button}
                                 source={require("../../icon/search-bar.png")}

@@ -6,15 +6,23 @@ import ShowingList from './ResultComponent/Showinglist'
 import Navbar from './navbar'
 
 
-const ResultScreen = () => {
+const ResultScreen = ({ route }) => {
+  const { key } = route.params;
+  var kata = JSON.stringify(key);
+  var result = kata.substring(1,kata.length-1);
+
+  // untuk check saja 
+  // console.log("sebelum: ", kata);
+  // console.log("sesudah: ", result);
+
   return (
     <View style={style.page}>
       <Header/>
       <SearchBar/>
       <View style={{top: 10}}>
-        <ShowingList/>
+        {/* <ShowingList params={result}/> */}
       </View>
-      <View style={style.page}>
+      <View>
         <Navbar/>
       </View>
     </View>
