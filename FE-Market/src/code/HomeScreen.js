@@ -8,7 +8,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 
 const HomeScreen = () => {
-
+  
   return (
     <View style={style.page}>
       <Header/>
