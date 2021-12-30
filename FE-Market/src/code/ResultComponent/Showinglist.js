@@ -7,12 +7,12 @@ const ShowingList = ( params ) => {
     var query = params;
 
     useEffect(() => {
-        getData();
+        getData(query);
     },[]);
 
     const getData = ( query ) => {
         // axios.get('https://6151286fd0a7c10017016906.mockapi.io/Products').then(res => 
-        axios.get(`localhost:8080/search/produk/${query}`).then(res => 
+        axios.get(`localhost:8080/produk/search/${query}`).then(res => 
         {
             // console.log('result: ',res)
             setDataProduk(res.data.data);
