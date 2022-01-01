@@ -10,10 +10,9 @@ const ShowingList = () => {
     },[]);
 
     const getData = () => {
-        // axios.get('https://6151286fd0a7c10017016906.mockapi.io/Products').then(res => 
-        axios.get(`localhost:8080/produk`).then(res => 
+        axios.get('http://10.0.2.2:8080/produk').then(res => 
         {
-            console.log('result: ',res)
+            // console.log('result: ',res);
             setDataProduk(res.data.data);
         })
     }
@@ -106,16 +105,3 @@ const styles = StyleSheet.create({
 })
 
 export default ShowingList;
-
-/*
-Items in database
------------------
-nama_produk
-deskripsi_produk
-stok
-harga_produk
-foto_produk
-rating_produk
-jumlah_terjual
-jumlah_dilihat
- */

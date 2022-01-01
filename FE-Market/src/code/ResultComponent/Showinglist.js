@@ -4,17 +4,17 @@ import { FlatList, View, Image, StyleSheet, Text } from "react-native";
 
 const ShowingList = ( params ) => {
     const [dataProduk, setDataProduk] = useState([]);
-    var query = params;
 
     useEffect(() => {
-        getData(query);
+        getData(params);
     },[]);
 
     const getData = ( query ) => {
-        // axios.get('https://6151286fd0a7c10017016906.mockapi.io/Products').then(res => 
-        axios.get(`localhost:8080/produk/search/${query}`).then(res => 
+        axios.get(`http://10.0.2.2:8080/produk/search/${query.params}`).then(res => 
         {
-            // console.log('result: ',res)
+            // untuk mengecek saja
+            // console.log('query: ',query);
+            // console.log('params: ',query.params);
             setDataProduk(res.data.data);
         })
     }

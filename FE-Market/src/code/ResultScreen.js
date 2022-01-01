@@ -20,7 +20,7 @@ const ResultScreen = ({ route }) => {
       <Header/>
       <SearchBar/>
       <View style={{top: 10}}>
-        <ShowingList params={result}/>
+        <ShowingList params={key}/>
       </View>
       <View>
         <Navbar/>
