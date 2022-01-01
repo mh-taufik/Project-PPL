@@ -17,7 +17,7 @@ const SearchBar = () => {
                     />
                     <View>
                         <View>
-                            <TouchableOpacity onPress={()=> {navigation.navigate("Result", {key: search})}}>
+                            <TouchableOpacity onPress={()=> {navigation.navigate("Result", {key: userInput})}}>
                                 <Image 
                                 style={style.button}
                                 source={require("../../icon/search-bar.png")}
