@@ -7,8 +7,8 @@ import Navbar from './navbar'
 
 
 const ResultScreen = ({ route }) => {
-  const { key } = route.params;
-  var kata = JSON.stringify(key);
+  const { userInput } = route.params;
+  var kata = JSON.stringify(userInput);
   var result = kata.substring(1,kata.length-1);
 
   // untuk check saja 
@@ -20,7 +20,7 @@ const ResultScreen = ({ route }) => {
       <Header/>
       <SearchBar/>
       <View style={{top: 10}}>
-        <ShowingList params={key}/>
+        <ShowingList params={result}/>
       </View>
       <View>
         <Navbar/>
