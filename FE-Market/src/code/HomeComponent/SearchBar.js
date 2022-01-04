@@ -1,10 +1,20 @@
 import * as React from "react";
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import DropDownPicker from 'react-native-dropdown-picker';
 
 const SearchBar = () => {
     const [search, setSearch] = React.useState('');
     const navigation = useNavigation();
+    const [open, setOpen] = React.useState(false);
+    const [value, setValue] = React.useState([]);
+    const [items, setItems] = React.useState([
+      {label: 'Dilihat Terbanyak', value: 1},
+      {label: 'Terjual Terbanyak', value: 2},
+      {label: 'Harga Tertinggi', value: 3},
+      {label: 'Harga Terendah', value: 4},
+      {label: 'Terbaru', value: 5},
+    ]);
 
     return (
         <View style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
@@ -26,9 +36,22 @@ const SearchBar = () => {
                         </View>
                     </View>
                 </View>
-            <View style={{flexDirection: 'row', top: 2,right:10}}>
-                <Image source={require('../../icon/filter.png')} style={{width: 24, height: 30}}/>
-                <Text style={style.textBlue}>Filter</Text>
+            <View style={{flexDirection: 'row', top: 2,right:10,width:100}}>
+            {/* <Image source={require('../../icon/filter.png')} style={{width: 24, height: 30}}/> */}
+                {/*<Text style={style.textBlue}>Filter</Text> */}
+
+                <DropDownPicker
+                open={open}
+                value={value}
+                items={items}
+                setOpen={setOpen}
+                setValue={setValue}
+                setItems={setItems}
+                placeholder="Filter"
+                placeholderStyle= {{color:'#0C8EFF'}}
+                style={style.DropDown}
+                />
+            
             </View>
         </View>
     )
@@ -38,8 +61,9 @@ const style = StyleSheet.create({
     bar: {
         color: '#868787',
         fontSize: 12,
-        right:5,
-        width: 312,
+        right:2,
+        //left:1,
+        width: 248,
         height: 33,
         borderColor: 'gray',
         borderRadius: 10,
@@ -60,6 +84,19 @@ const style = StyleSheet.create({
         top: 6,
         position:'absolute'
     },
+
+    DropDown :{
+        color: '#868787',
+        //width : 130,
+        height : 30,
+        fontSize: 2,
+        left : 13,
+        top: -1,
+        //right:1,
+        borderColor: 'gray',
+        placeholder: 'filter'
+    },
+
     // textSearch: {
     //     color: '#868787',
     //     fontSize: 12,
