@@ -9,11 +9,11 @@ const SearchBar = () => {
     const [open, setOpen] = React.useState(false);
     const [value, setValue] = React.useState([]);
     const [items, setItems] = React.useState([
-      {label: 'Dilihat Terbanyak', value: 1},
-      {label: 'Terjual Terbanyak', value: 2},
-      {label: 'Harga Tertinggi', value: 3},
-      {label: 'Harga Terendah', value: 4},
-      {label: 'Terbaru', value: 5},
+      {label: 'Dilihat Terbanyak', value: 1, fontSize:2},
+      {label: 'Terjual Terbanyak', value: 2, fontSize:2},
+      {label: 'Harga Tertinggi', value: 3, fontSize:2},
+      {label: 'Harga Terendah', value: 4, fontSize:2},
+      {label: 'Terbaru', value: 5, fontSize:2},
     ]);
 
     return (
@@ -94,7 +94,7 @@ const style = StyleSheet.create({
         top: -1,
         //right:1,
         borderColor: 'gray',
-        placeholder: 'filter'
+        placeholder: 'Filter'
     },
 
     // textSearch: {
