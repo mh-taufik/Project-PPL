@@ -46,8 +46,9 @@ const SearchBar = () => {
           </View>
         </View>
       </View>
-      <View style={{flexDirection: 'row', top: 2, right: 10, width: 100}}>
-        {/* <Image source={require('../../icon/filter.png')} style={{width: 24, height: 30}}/> */}
+      <View style={{flexDirection: 'row', top: 2, right: 10, width: 98}}>
+        <Image source={require('../../icon/filter.png')}
+            style={{width: 23, height: 22,left:-5,top:4}}/>
         {/*<Text style={style.textBlue}>Filter</Text> */}
 
         <DropDownPicker
@@ -60,11 +61,6 @@ const SearchBar = () => {
           placeholder="Filter"
           placeholderStyle={{color: '#0C8EFF'}}
           style={style.DropDown}
-          // listItemContainer={{
-          //     height: 40,
-          //     fontSize: 12,
-          //     color: '#0C8EFF',
-          // }}
 
           listItemLabelStyle={{
             color: '#000',
@@ -78,12 +74,7 @@ const SearchBar = () => {
           textStyle={{
             fontSize: 10,
           }}
-          selectedItemLabelStyle={
-            {
-              //fontWeight: "bold",
-              //color: "white",
-            }
-          }
+          
         />
       </View>
     </View>
@@ -94,9 +85,9 @@ const style = StyleSheet.create({
   bar: {
     color: '#868787',
     fontSize: 12,
-    right: 2,
+    right: 10,
     //left:1,
-    width: 248,
+    width: 230,
     height: 33,
     borderColor: 'gray',
     borderRadius: 10,
@@ -110,6 +101,7 @@ const style = StyleSheet.create({
     fontSize: 15,
     top: 5,
   },
+
   button: {
     width: 23,
     height: 19,
@@ -123,7 +115,7 @@ const style = StyleSheet.create({
     //width : 130,
     height: 30,
     fontSize: 2,
-    left: 13,
+    left: -2,
     top: -1,
     //right:1,
     borderColor: 'gray',
