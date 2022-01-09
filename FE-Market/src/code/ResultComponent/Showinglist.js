@@ -18,13 +18,18 @@ const ShowingList = ( params ) => {
             setDataProduk(res.data.data);
         })
     }
-
+    const EmptyList = ( ) => {
+        return(
+            <Text style={styles.EmptyList}>Produk tidak ditemukan</Text>
+        )
+    }
     return (
         <View style={styles.container}>
             <FlatList
             numColumns={2}
             keyExtractor={( item ) => item.produk_id}
             data={dataProduk}
+            ListEmptyComponent={EmptyList}
             renderItem={({ item }) => (
                 <View style={styles.cardProduk}>
                     <View style={styles.stok}>
@@ -103,6 +108,11 @@ const styles = StyleSheet.create({
         color: 'gray',
         fontSize: 12,
         left: '80%',
+    },
+    EmptyList: {
+        left : 90,
+        fontSize : 17,
+        top : 5
     }
 })
 

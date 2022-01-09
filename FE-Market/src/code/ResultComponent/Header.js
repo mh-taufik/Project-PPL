@@ -8,25 +8,22 @@ const Header = () => {
                 <Image source={require('../../icon/back.png')} style={style.back} />
                 <Image source={require('../../icon/mail.png')} style={style.mail}/>
                 <Text style={style.tittle}>Result</Text>
+
             </View>
-            {/* <View style={style.option}>
-                <View  style={style.squareGray}>
-                    <Image source={require('../../icon/friend.png')} style={style.icon}/>
-                    <Text style={style.textGray}>Friend</Text>
+            <View style={style.option}>
+                <View  style={style.TextOptions}>
+                    <Text style={{left: 20,borderBottomWidth: 2,borderBottomColor: '#0C8EFF'}}>Terlaris</Text>
                 </View>
-                <View  style={style.squareGray}>
-                    <Image source={require('../../icon/forum.png')} style={style.icon}/>
-                    <Text style={style.textGray}>Forum</Text>
+                <View  style={style.TextOptions}>
+                    <Text style={{left : 60}}>Terbaru</Text>
                 </View>
-                <View  style={style.squareGray}>
-                    <Image source={require('../../icon/event.png')} style={style.icon}/>
-                    <Text style={style.textGray}>Event</Text>
+                <View  style={style.TextOptions}>
+                    <Text style={{left: 100}}>Tertinggi</Text>
                 </View>
-                <View  style={style.squareBlue}>
-                    <Image source={require('../../icon/market.png')} style={style.icon}/>
-                    <Text style={style.textBlue}>Market</Text>
-                </View> */}
-            {/* </View> */}
+                <View  style={style.TextOptions}>
+                    <Text style={{left: 140}}>Terendah</Text>
+                </View> 
+             </View> 
         </View>
     )
 }
@@ -55,6 +52,10 @@ const style = StyleSheet.create ({
         width :'5%',
         top : 10,
         left : 7
+    },
+    option:{
+        flexDirection: 'row',
+        top : 79
     },
 })
 

@@ -22,7 +22,7 @@ const ResultScreen = ({ route }) => {
       <View style={{top: 10}}>
         <ShowingList params={key}/>
       </View>
-      <View>
+      <View style={{position: 'absolute',bottom : 30}}>
         <Navbar/>
       </View>
     </View>

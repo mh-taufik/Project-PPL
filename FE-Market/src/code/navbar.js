@@ -15,18 +15,18 @@ const Navbar = () => {
       </View>
       <View style={styles.kotak}>
         <Image source={search} style={styles.icon} />
-        <Text style={styles.teks}>Search</Text>
+        <Text style={styles.teksSearch}>Search</Text>
       </View>
       <View style={styles.kotak}>
         <Image source={button_tengah} style={styles.midButton} />
       </View>
       <View style={styles.kotak}>
         <Image source={diamond} style={styles.icon} />
-        <Text style={styles.teks}>Safety</Text>
+        <Text style={styles.teksFeed}>Safety</Text>
       </View>
       <View style={styles.kotak}>
         <Image source={user} style={styles.icon} />
-        <Text style={styles.teks}>Profile</Text>
+        <Text style={styles.teksFeed}>Profile</Text>
       </View>
     </View>
   );
@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     top: 18,
   },
-  teks: {
+  teksFeed: {
     color: '#d1d1d1',
     alignSelf: 'center',
     top: 18,
   },
-  teksFeed: {
+  teksSearch: {
     color: '#0C8EFF',
     alignSelf: 'center',
     top: 18,
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     alignSelf: 'center',
-    top: 5,
+    top: 2,
   },
   kotak: {
     width: '20%',
