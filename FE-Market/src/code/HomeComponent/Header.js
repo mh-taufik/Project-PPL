@@ -39,12 +39,15 @@ const style = StyleSheet.create ({
         fontFamily: 'Roboto',
         color: 'black',
         fontSize: 18,
+        left: 10,
+        top : 5
     },
     mail: {
         position: 'absolute',
         width: '9%',
         height: '80%',
-        left: '90%'
+        left: '90%',
+        top: 5
     },
     option: {
         flex: 2,
