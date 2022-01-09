@@ -13,6 +13,8 @@ func Router() *mux.Router {
 	r.HandleFunc("/produk", service.AllDataProduct)
 	r.HandleFunc("/produk/rekomendasi/{nama}", service.Recommend)
 	r.HandleFunc("/produk/search/{nama}", service.Search)
+	r.HandleFunc("/produk/{id}", service.Filter)
+
 
 	return r
 
