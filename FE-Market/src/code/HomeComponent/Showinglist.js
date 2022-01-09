@@ -2,17 +2,15 @@ import axios from 'axios';
 import React, { useEffect ,useState } from "react";
 import { FlatList, View, Image, StyleSheet, Text } from "react-native";
 
-const ShowingList = () => {
+const ShowingList = (value) => {
     const [dataProduk, setDataProduk] = useState([]);
     
     useEffect(() => {
-        getData();
-    },[]);
+        getData(value.value);
+    },[value]);
 
-    const getData = () => {
-        axios.get('http://10.0.2.2:8080/produk').then(res => 
-        {
-            // console.log('result: ',res);
+    const getData = (val) => {
+        axios.get(`http://10.0.2.2:8080/produk/${val}`).then(res => {        
             setDataProduk(res.data.data);
         })
     }

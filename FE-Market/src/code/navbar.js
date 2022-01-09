@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     top: 18,
   },
   teksFeed: {
-    color: '#d1d1d1',
+    color: '#868787',
     alignSelf: 'center',
     top: 18,
   },

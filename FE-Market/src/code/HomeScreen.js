@@ -8,13 +8,14 @@ import { NavigationContainer } from '@react-navigation/native';
 
 
 const HomeScreen = () => {
+  const [value,setValue] = React.useState();
   
   return (
     <View style={style.page}>
       <Header/>
-      <SearchBar/>
+      <SearchBar selectedValue={value} changeValue={setValue}/>
       <View style={{top: 10}}>
-        <ShowingList/>
+        <ShowingList value={value}/>
       </View>
       <View >
         <Navbar/>
