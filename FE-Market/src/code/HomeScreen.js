@@ -13,7 +13,7 @@ const HomeScreen = () => {
       <View style={{top: 10}}>
         <ShowingList/>
       </View>
-      <View style={style.page}>
+      <View>
         <Navbar/>
       </View>
     </View>
