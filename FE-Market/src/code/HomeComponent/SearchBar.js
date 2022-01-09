@@ -62,7 +62,7 @@ const SearchBar = () => {
           <View>
             <TouchableOpacity
               onPress={() => {
-                navigation.navigate('Result', {key: userInput});
+                navigation.navigate('Result', {key: search});
               }}>
               <Image
                 style={style.button}
@@ -94,7 +94,6 @@ const SearchBar = () => {
           }}
           selectedItemContainerStyle={{
             backgroundColor: '#47aaff',
-            //'#7ac1ff'
           }}
           textStyle={{
             fontSize: 10,

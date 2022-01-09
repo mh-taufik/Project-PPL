@@ -80,7 +80,7 @@ const style = StyleSheet.create ({
     textGray: {
         fontSize: 15,
         fontFamily: 'Roboto',
-        color: '#868787',
+        color: '#F0F2F5',
         top: '5%',
     },
     textBlue: {

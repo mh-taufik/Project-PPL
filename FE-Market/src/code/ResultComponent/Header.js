@@ -15,13 +15,13 @@ const Header = () => {
                     <Text style={{left: 20,borderBottomWidth: 2,borderBottomColor: '#0C8EFF'}}>Terlaris</Text>
                 </View>
                 <View  style={style.TextOptions}>
-                    <Text style={{left : 60}}>Terbaru</Text>
+                    <Text style={{left : 60,borderBottomWidth: 2,borderBottomColor: '#F0F2F5'}}>Terbaru</Text>
                 </View>
                 <View  style={style.TextOptions}>
-                    <Text style={{left: 100}}>Tertinggi</Text>
+                    <Text style={{left: 100,borderBottomWidth: 2,borderBottomColor: '#F0F2F5'}}>Tertinggi</Text>
                 </View>
                 <View  style={style.TextOptions}>
-                    <Text style={{left: 140}}>Terendah</Text>
+                    <Text style={{left: 140,borderBottomWidth: 2,borderBottomColor: '#F0F2F5'}}>Terendah</Text>
                 </View> 
              </View> 
         </View>
