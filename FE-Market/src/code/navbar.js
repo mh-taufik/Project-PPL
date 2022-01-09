@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, StyleSheet, Text, View} from 'react-native';
-import feeds from '../icons/feeds.png';
+import feeds from '../icons/feeds2.png';
 import diamond from '../icons/diamond.png';
 import button_tengah from '../icons/button_tengah.png';
-import search from '../icons/search.png';
+import search from '../icons/search2.png';
 import user from '../icons/user.png';
 
 const Navbar = () => {
