@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 
 const SearchBar = () => {
     return (
-        <View style={{flexDirection: 'row', justifyContent: 'space-evenly', top: '-5%'}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-evenly', top: '-8%'}}>
                 <View style={{flexDirection:'row'}}>
                     <TextInput
                     placeholder="Search"
@@ -32,7 +32,7 @@ const style = StyleSheet.create({
         height: '70%',
         borderColor: 'gray',
         borderRadius: 10,
-        borderWidth: 2,
+        borderWidth: 2
     },
     textBlue: {
         color: '#0C8EFF',
